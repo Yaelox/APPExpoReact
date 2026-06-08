@@ -1,4 +1,4 @@
-import { TextInput,StyleSheet,View,Button, Modal } from "react-native";
+import { TextInput,StyleSheet,View,Button, Modal, Image} from "react-native";
 import { useState } from "react";
 
 function GoalInput(props){
@@ -17,6 +17,7 @@ function GoalInput(props){
     return(
     <Modal visible={props.visible} animationType="slide">
         <View style={styles.inputContainer}>
+            <Image style={styles.image} source={require('../assets/images/goal.png')} />
            <TextInput
                 style={styles.TextInput}
                 placeholder="Your course goal"
@@ -43,10 +44,9 @@ const styles = StyleSheet.create({
     flex:1,
     justifyContent:'center',
     alignItems:'center',
-    marginBottom: 24,
     padding:16,
     borderBottomWidth:1,
-    borderBottomColor:'#cccccc'
+    backgroundColor:'#311b6b'
   },
 
   TextInput:{
@@ -54,6 +54,12 @@ const styles = StyleSheet.create({
     borderColor:'#cccccc',
     width:'100%',
     padding:8
+  },
+  image:{
+
+    width:100,
+    height:100,
+    margin:20
   },
   buttonContainer:{
     marginTop:16,
